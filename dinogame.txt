@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+int main() {
+    char input;
+    int safe = 0;
+    srand(time(0));
+
+
+    printf("Press 'j' to jump when I say 'Obstacle!'\n");
+    for(int i=0; i<5; i++) {
+        sleep(rand() % 3 + 1);
+        printf("Obstacle!\n");
+        input = getchar();
+        getchar();  // Clear newline
+
+
+        if (input == 'j') {
+            printf("Safe!\n");
+            safe++;
+        } else {
+            printf("Hit! Game Over.\n");
+            break;
+        }
+    }
+    if (safe == 5) printf("You Win! Jumped all obstacles.\n");
+    
+    return 0;
+}
