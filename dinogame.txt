@@ -25,7 +25,6 @@ int main() {
             break;
         }
     }
-    if (safe == 5) printf("You Win! Jumped all obstacles.\n");
-    
+    if (safe == 5) printf("You Win! Jumped all obstacles.\n"); 
     return 0;
 }
