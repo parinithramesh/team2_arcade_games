@@ -1,0 +1,24 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+
+int main() {
+    srand(time(NULL));
+
+    printf("🕹️ Reaction Timer Game!\n");
+    printf("Wait for 'NOW!' and hit Enter as fast as you can!\n");
+    sleep(rand() % 3 + 1);
+
+    printf("\nNOW! Press Enter!\n");
+    clock_t start = clock();
+    getchar(); // Wait for Enter
+    clock_t end = clock();
+
+    double reactionTime = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("⚡ Your reaction time: %.3f seconds!\n", reactionTime);
+
+    return 0;
+}
+
